@@ -28,7 +28,7 @@ def kNN_classify(k, X_train, y_train, x):
   assert X_train.shape[1] == x.shape[0], ("the feature "
       + "number of x must be equal to X_train")
 
-  distances = [sqrt(np.sum((x_train - x) ** 2)) for x_train in X_train)]
+  distances = [sqrt(np.sum((x_train - x) ** 2)) for x_train in X_train]
   nestindexs = np.argsort(distances)
 
   topK_y = [y_train[i] for i in nestindexs[:k]]
