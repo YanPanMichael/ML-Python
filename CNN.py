@@ -21,3 +21,11 @@ y_train = np.array(raw_data_y)
 
 x = np.array([8.094, 3.366])
 
+def kNN_classify(k, X_train, y_train, x):
+  distances = [sqrt(np.sum((x_train - x) ** 2)) for x_train in X_train)]
+  nestindexs = np.argsort(distances)
+
+  topK_y = [y_train[i] for i in nestindexs[:k]]
+  votes = Counter(topK_y)
+
+  return votes.most_common(1)[0][0]
