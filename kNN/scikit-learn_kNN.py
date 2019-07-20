@@ -1,4 +1,5 @@
 from sklearn.neighbors import KNeighborsClassifier
+from .data_simple_one import X_train, y_train, x
 
 kNN_classifier = KNeighborsClassifier(n_neighbors=6)
 
