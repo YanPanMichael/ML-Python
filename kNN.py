@@ -82,5 +82,8 @@ class kNNClassifier():
 # kNN_classifier_re = kNNClassifier(6)
 # kNN_classifier_re.fit(X_train, y_train)
 
+# X_predict = x.reshape(1, -1)
+# X_predict
+
 # y_predict_re = kNN_classifier_re.predict(X_predict)
 # y_predict_re[0]
