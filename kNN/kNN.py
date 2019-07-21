@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from math import sqrt
 from collections import Counter
+from .metrics import accuracy_score
 
 # from .data_simple_one import X_train, y_train, x
 
@@ -56,6 +57,10 @@ class kNNClassifier():
         votes = Counter(topK_y)
 
         return votes.most_common(1)[0][0]
+
+    def score(self, X_test, y_test):
+        y_predict = self.predict(X_test)
+        return accuracy_score(y_test, y_predict)
         
     def __repr__(self):
         return "kNN(k=%d)" % self.k
